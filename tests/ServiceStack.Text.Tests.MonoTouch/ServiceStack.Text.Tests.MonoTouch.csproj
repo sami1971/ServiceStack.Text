@@ -22,8 +22,10 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <MtouchDebug>True</MtouchDebug>
-    <MtouchProfiling>True</MtouchProfiling>
     <MtouchLink>None</MtouchLink>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -47,7 +49,8 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>True</MtouchDebug>
     <MtouchProfiling>True</MtouchProfiling>
-    <MtouchI18n />
+    <MtouchI18n>
+    </MtouchI18n>
     <MtouchArch>ARMv6</MtouchArch>
     <MtouchExtraArgs>-aot "ntrampolines=2048" -aot "nrgctx-trampolines=2048" -aot "nimt-trampolines=1024" -nosymbolstrip -nostrip</MtouchExtraArgs>
   </PropertyGroup>
@@ -60,9 +63,11 @@
     <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
     <DefineConstants>MONOTOUCH</DefineConstants>
-    <MtouchI18n />
+    <MtouchI18n>
+    </MtouchI18n>
     <MtouchArch>ARMv6</MtouchArch>
-    <IpaPackageName />
+    <IpaPackageName>
+    </IpaPackageName>
     <MtouchExtraArgs>-aot "ntrampolines=2048" -aot "nrgctx-trampolines=2048" -aot "nimt-trampolines=1024" -nosymbolstrip -nostrip</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
@@ -74,7 +79,8 @@
     <ConsolePause>False</ConsolePause>
     <BuildIpa>True</BuildIpa>
     <CodesignKey>iPhone Distribution</CodesignKey>
-    <MtouchI18n />
+    <MtouchI18n>
+    </MtouchI18n>
     <MtouchArch>ARMv6</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
@@ -85,7 +91,8 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <CodesignKey>iPhone Distribution</CodesignKey>
-    <MtouchI18n />
+    <MtouchI18n>
+    </MtouchI18n>
     <MtouchArch>ARMv6</MtouchArch>
   </PropertyGroup>
   <ItemGroup>
@@ -97,11 +104,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
-    <None Include="..\ServiceStack.Text.Tests\AdhocModelTests.cs.orig">
-      <Link>AdhocModelTests.cs.orig</Link>
-    </None>
-    <None Include="..\ServiceStack.Text.Tests\ServiceStack.Text.Tests.csproj">
-      <Link>ServiceStack.Text.Tests.csproj</Link>
+    <None Include="..\ServiceStack.Text.Tests\QueryStringSerializerTests.cs">
+      <Link>QueryStringSerializerTests.cs</Link>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -215,9 +219,6 @@
     </Compile>
     <Compile Include="..\ServiceStack.Text.Tests\NullableTypesTests.cs">
       <Link>NullableTypesTests.cs</Link>
-    </Compile>
-    <Compile Include="..\ServiceStack.Text.Tests\QueryStringSerializerTests.cs">
-      <Link>QueryStringSerializerTests.cs</Link>
     </Compile>
     <Compile Include="..\ServiceStack.Text.Tests\ReflectionExtensionTests.cs">
       <Link>ReflectionExtensionTests.cs</Link>

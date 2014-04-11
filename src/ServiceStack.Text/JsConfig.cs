@@ -6,10 +6,6 @@ using ServiceStack.Text.Common;
 using ServiceStack.Text.Json;
 using ServiceStack.Text.Jsv;
 
-#if WINDOWS_PHONE && !WP8
-using ServiceStack.Text.WP;
-#endif
-
 namespace ServiceStack.Text
 {
     public static class

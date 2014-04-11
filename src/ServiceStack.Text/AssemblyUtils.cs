@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-#if SILVERLIGHT
-
-#endif
 using System.Threading;
 using ServiceStack.Common.Support;
 
@@ -35,7 +32,7 @@ namespace ServiceStack.Text
             Type type = null;
             if (TypeCache.TryGetValue(typeName, out type)) return type;
 
-#if !SILVERLIGHT
+#if !SILVERLIGHT || WINDOWS_PHONE
             type = Type.GetType(typeName);
 #endif
             if (type == null)

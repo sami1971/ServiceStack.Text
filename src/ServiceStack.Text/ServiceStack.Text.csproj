@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ServiceStack.Text</RootNamespace>
     <AssemblyName>ServiceStack.Text</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -64,16 +64,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Runtime.Serialization">
-      <RequiredTargetFramework>3.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -131,9 +125,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\JsWriter.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Common\ParseUtils.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\StaticParseMethod.cs">
@@ -260,9 +251,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="SystemTime.cs" />
-    <Compile Include="TextExtensions.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Tracer.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -278,8 +266,13 @@
     <Compile Include="TypeSerializer.Generic.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="WebRequestExtensions.cs" />
     <Compile Include="XmlSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\ParseUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TextExtensions.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

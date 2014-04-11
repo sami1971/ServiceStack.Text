@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
+using System.Net;
 
 namespace ServiceStack.Text.Tests.UseCases
 {
@@ -15,18 +16,25 @@ namespace ServiceStack.Text.Tests.UseCases
 		[Test]
 		public void DO_ALL_THE_THINGS()
 		{
-			var client = new GithubV3ApiGateway();
+            try
+            {
+    			var client = new GithubV3ApiGateway();
 
-			Console.WriteLine("\n-- GetUserRepos(mythz): \n" + client.GetUserRepos("mythz").Dump());
-			Console.WriteLine("\n-- GetOrgRepos(ServiceStack): \n" + client.GetOrgRepos("ServiceStack").Dump());
-			Console.WriteLine("\n-- GetUserRepo(ServiceStack,ServiceStack.Text): \n" + client.GetUserRepo("mythz", "jquip").Dump());
-			Console.WriteLine("\n-- GetUserRepoContributors(ServiceStack,ServiceStack.Text): \n" + client.GetUserRepoContributors("ServiceStack", "ServiceStack.Text").Dump());
-			Console.WriteLine("\n-- GetUserRepoWatchers(ServiceStack,ServiceStack.Text): \n" + client.GetUserRepoWatchers("ServiceStack", "ServiceStack.Text").Dump());
-			Console.WriteLine("\n-- GetReposUserIsWatching(mythz): \n" + client.GetReposUserIsWatching("mythz").Dump());
-			Console.WriteLine("\n-- GetUserOrgs(mythz): \n" + client.GetUserOrgs("mythz").Dump());
-			Console.WriteLine("\n-- GetUserFollowers(mythz): \n" + client.GetUserFollowers("mythz").Dump());
-			Console.WriteLine("\n-- GetOrgMembers(ServiceStack): \n" + client.GetOrgMembers("ServiceStack").Dump());
-			Console.WriteLine("\n-- GetAllUserAndOrgsReposFor(mythz): \n" + client.GetAllUserAndOrgsReposFor("mythz").Dump());
+                Console.WriteLine("\n-- GetUserRepos(mythz): \n" + client.GetUserRepos("sami1971").Dump());
+    			Console.WriteLine("\n-- GetOrgRepos(ServiceStack): \n" + client.GetOrgRepos("ServiceStack").Dump());
+    			Console.WriteLine("\n-- GetUserRepo(ServiceStack,ServiceStack.Text): \n" + client.GetUserRepo("mythz", "jquip").Dump());
+    			Console.WriteLine("\n-- GetUserRepoContributors(ServiceStack,ServiceStack.Text): \n" + client.GetUserRepoContributors("ServiceStack", "ServiceStack.Text").Dump());
+    			Console.WriteLine("\n-- GetUserRepoWatchers(ServiceStack,ServiceStack.Text): \n" + client.GetUserRepoWatchers("ServiceStack", "ServiceStack.Text").Dump());
+    			Console.WriteLine("\n-- GetReposUserIsWatching(mythz): \n" + client.GetReposUserIsWatching("mythz").Dump());
+    			Console.WriteLine("\n-- GetUserOrgs(mythz): \n" + client.GetUserOrgs("mythz").Dump());
+    			Console.WriteLine("\n-- GetUserFollowers(mythz): \n" + client.GetUserFollowers("mythz").Dump());
+    			Console.WriteLine("\n-- GetOrgMembers(ServiceStack): \n" + client.GetOrgMembers("ServiceStack").Dump());
+    			Console.WriteLine("\n-- GetAllUserAndOrgsReposFor(mythz): \n" + client.GetAllUserAndOrgsReposFor("mythz").Dump());
+            }
+            catch (WebException ex)
+            {
+                Assert.Inconclusive (ex.Message);
+            }
 		}
 	}
 

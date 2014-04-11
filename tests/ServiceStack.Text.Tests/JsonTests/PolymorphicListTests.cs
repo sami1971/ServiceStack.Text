@@ -499,7 +499,8 @@ namespace ServiceStack.Text.Tests.JsonTests
             Log(output);
 	        Assert.IsTrue(output.Contains("__type"));
             var terms2 = JsonSerializer.DeserializeFromString<Terms>(output);
-	        Assert.IsAssignableFrom<FooTerm>(terms2.First());
+            Assert.IsTrue (terms2.First ().GetType ().IsAssignableFrom (typeof(FooTerm)));
+            //Assert.IsAssignableFrom<FooTerm>(terms2.First());
 	    }
 
 	}

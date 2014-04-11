@@ -20,15 +20,15 @@ using System.Text;
 using System.Text.RegularExpressions;
 using ServiceStack.Text.Common;
 using ServiceStack.Text.Support;
+using System.Linq;
+
+
 #if NETFX_CORE
 using System.Threading.Tasks;
 #endif
 
 #if WINDOWS_PHONE
 using System.IO.IsolatedStorage;
-#if  !WP8
-using ServiceStack.Text.WP;
-#endif
 #endif
 
 namespace ServiceStack.Text
@@ -215,9 +215,10 @@ namespace ServiceStack.Text
 
             var sb = new StringBuilder();
             var textLength = text.Length;
-            for (var i = 0; i < textLength; i++)
+
+            foreach (var c in text)
             {
-                var c = text[i];
+                //sb.Append(encodeCharMap.Contains(c) ? '%' + ((int)c).ToString("x") : c);
                 if (encodeCharMap.Contains(c))
                 {
                     sb.Append('%' + ((int)c).ToString("x"));
@@ -227,6 +228,7 @@ namespace ServiceStack.Text
                     sb.Append(c);
                 }
             }
+
             return sb.ToString();
         }
 #endif
@@ -470,11 +472,6 @@ namespace ServiceStack.Text
         public static T FromJson<T>(this string json)
         {
             return JsonSerializer.DeserializeFromString<T>(json);
-        }
-
-        public static string ToCsv<T>(this T obj)
-        {
-            return CsvSerializer.SerializeToString(obj);
         }
 
 #if !XBOX && !SILVERLIGHT && !MONOTOUCH

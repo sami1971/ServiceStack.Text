@@ -4,13 +4,7 @@ using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Web;
-using Funq;
 using NUnit.Framework;
-using ServiceStack.ServiceHost;
-using ServiceStack.ServiceInterface.Testing;
-using ServiceStack.WebHost.Endpoints;
-using ServiceStack.WebHost.Endpoints.Support.Mocks;
 
 namespace ServiceStack.Text.Tests
 {
