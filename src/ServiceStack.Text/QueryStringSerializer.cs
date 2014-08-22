@@ -58,7 +58,6 @@ namespace ServiceStack.Text
 			}
 			catch (Exception ex)
 			{
-				Tracer.Instance.WriteError(ex);
 				throw;
 			}
 		}

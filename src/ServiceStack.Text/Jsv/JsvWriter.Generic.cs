@@ -66,7 +66,6 @@ namespace ServiceStack.Text.Jsv
 			}
 			catch (Exception ex)
 			{
-				Tracer.Instance.WriteError(ex);
 				throw;
 			}
 		}

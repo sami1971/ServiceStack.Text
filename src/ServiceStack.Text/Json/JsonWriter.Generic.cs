@@ -65,7 +65,6 @@ namespace ServiceStack.Text.Json
 			}
 			catch (Exception ex)
 			{
-				Tracer.Instance.WriteError(ex);
 				throw;
 			}
 		}
@@ -98,7 +97,6 @@ namespace ServiceStack.Text.Json
 			}
 			catch (Exception ex)
 			{
-				Tracer.Instance.WriteError(ex);
 				throw;
 			}
 		}
